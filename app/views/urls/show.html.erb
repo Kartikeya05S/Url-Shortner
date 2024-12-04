@@ -1,0 +1,9 @@
+<h1>Shortened URL</h1>
+<p>
+  Original URL:
+  <%= @url.original_url %>
+</p>
+<p>
+  Shortened URL:
+  <%= link_to "Visit Shortened URL", redirect_url(@url.shortened_url) %>
+</p>

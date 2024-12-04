@@ -1,0 +1,32 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/urls":
+    post:
+      summary: Create a shortened URL
+      tags:
+      - URLs
+      parameters: []
+      responses:
+        '201':
+          description: URL created
+        '422':
+          description: Invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                original_url:
+                  type: string
+              required:
+              - original_url
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
